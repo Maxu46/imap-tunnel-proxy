@@ -1,0 +1,22 @@
+# IMAP Tunnel - Users Configuration
+#
+# Each user has:
+#   - secret: Authentication secret (required)
+#   - whitelist: List of allowed IP addresses/CIDR (optional)
+#   - logging: Enable logging for this user (optional, default: true)
+#
+# Use imap-tunnel-adduser to add new users
+# Use imap-tunnel-deluser to remove users
+# Use imap-tunnel-listusers to list all users
+
+users:
+  # Example user (uncomment and modify):
+  # alice:
+  #   secret: "generate-with-adduser-script"
+  #   whitelist:
+  #     - "192.168.1.100"
+  #     - "10.0.0.0/8"
+  #   logging: true
+  #
+  # Simple format (secret only):
+  # bob: "bobs-secret-here"

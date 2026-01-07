@@ -1,0 +1,23 @@
+[Unit]
+Description=IMAP Tunnel Server
+Documentation=https://github.com/x011/imap-tunnel-proxy
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/imap-tunnel
+ExecStart=/usr/bin/python3 /opt/imap-tunnel/server.py -c /etc/imap-tunnel/config.yaml
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+# Security hardening (optional)
+# NoNewPrivileges=true
+# ProtectSystem=strict
+# ProtectHome=true
+# ReadWritePaths=/etc/imap-tunnel
+
+[Install]
+WantedBy=multi-user.target
